@@ -20,14 +20,14 @@ Each config is organized in its own folder or root dotfile with clear structure 
 ### Clone this repo
 
 ```bash
-git clone https://github.com/lukasrennhofer/dotfiles.git ~/dotfiles
+git clone https://github.com/lukasrennhofer/dotfiles.git ~/personaldotfiles
 ```
 
 ### Quick setup (example for Neovim)
 
 ```bash
 rm -rf ~/.config/nvim
-ln -s ~/dotfiles/nvim ~/.config/nvim
+ln -s ~/personaldotfiles/nvim ~/.config/nvim
 ```
 
 Repeat similarly for other tools, or customize the installation to your needs.
