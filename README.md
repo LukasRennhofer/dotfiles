@@ -30,7 +30,7 @@ rm -rf ~/.config/nvim
 ln -s ~/personaldotfiles/nvim ~/.config/nvim
 ```
 
-Repeat similarly for other tools, or customize the installation to your needs.
+Then open ```nvim``` and type ```:PackerSync```
 
 ---
 
