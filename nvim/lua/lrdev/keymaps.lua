@@ -1,5 +1,13 @@
 local opts = { noremap = true, silent = true }
 
-vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>h', ':nohlsearch<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>q', ':q<CR>', opts)
+-- Toggle NvimTree
+vim.keymap.set('n', '<leader>e', function()
+    require("nvim-tree.api").tree.toggle()
+end, opts)
+
+-- Clear search highlights
+vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>', opts)
+
+-- Quit
+vim.keymap.set('n', '<leader>q', ':q<CR>', opts)
+

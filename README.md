@@ -9,6 +9,7 @@ Here I store and maintain all my essential configuration files across different 
 
 This repo contains my configurations for:
 
+- **Hyperland** — my wallpapers, gruvbox like style, custom waybar style
 - **Neovim** — fully customized with Lua, plugins, LSP, Treesitter, and more
 
 Each config is organized in its own folder or root dotfile with clear structure and documentation.

@@ -33,6 +33,24 @@ packer.startup(function()
     requires = {'nvim-lua/plenary.nvim'}
   }
 
+  use {
+	'nvim-tree/nvim-tree.lua',
+  	requires = { 'nvim-tree/nvim-web-devicons' }, -- optional, for icons
+  	config = function()
+     	require("nvim-tree").setup {}
+  	end
+  }
+  
+  use {
+  "hrsh7th/nvim-cmp",
+  requires = {
+    "hrsh7th/cmp-nvim-lsp",    -- LSP completion
+    "hrsh7th/cmp-buffer",      -- words from buffer
+    "hrsh7th/cmp-path",        -- file paths
+    "L3MON4D3/LuaSnip",        -- snippet engine
+    "saadparwaiz1/cmp_luasnip" -- snippet completions
+  }}
+
   -- Debug Adapter Protocol
   use 'mfussenegger/nvim-dap'
 

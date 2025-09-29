@@ -1,5 +1,44 @@
 -- main init.lua for nvim-config-lrdev
 
+-- Set the Leader key to comma
+vim.g.mapleader = ","
+
+-- Set Absolute numbers for editor
+vim.opt.number = true
+
+-- For Vantor Projects
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufReadPost" }, {
+  pattern = { "*/Vantor/**/*.cpp", "*/Vantor/**/*.hpp" },
+  callback = function(args)
+    -- only insert if file is empty
+    if vim.api.nvim_buf_line_count(0) == 1
+      and vim.api.nvim_buf_get_lines(0, 0, 1, false)[1] == "" then
+
+      local header = {
+        "/****************************************************************************",
+        " * Vantor Engine™ - Source Code (2025)",
+        " *",
+        " * Author    : Lukas Rennhofer (@LukasRennhofer), Vantor Studios™",
+        " * Copyright : © 2025 Lukas Rennhofer, Vantor Studios™",
+        " * License   : GNU General Public License v3.0",
+        " *             See LICENSE file for full details.",
+        " ****************************************************************************/",
+        "",
+      }
+
+      -- insert header
+      vim.api.nvim_buf_set_lines(0, 0, -1, false, header)
+
+      -- check filetype by extension
+      local fname = args.file
+      if fname:match("%.hpp$") then
+        vim.api.nvim_buf_set_lines(0, -1, -1, false, { "#pragma once", "" })
+      end
+    end
+  end,
+})
+
+
 -- Bootstrap packer if not installed
 local ensure_packer = function()
   local fn = vim.fn
