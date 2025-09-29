@@ -28,7 +28,7 @@ git clone https://github.com/lukasrennhofer/dotfiles.git ~/personaldotfiles
 
 ```bash
 rm -rf ~/.config/nvim
-ln -s ~/personaldotfiles/nvim ~/.config/nvim
+ln -s ~/dotfiles/nvim ~/.config/nvim
 ```
 
 Then open ```nvim``` and type ```:PackerSync```
